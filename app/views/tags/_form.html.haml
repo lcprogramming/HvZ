@@ -1,0 +1,21 @@
+= form_for @tag, :html => { :class => "form-horizontal" } do |f|
+  -if @tag.errors.any?
+    .alert.alert-danger.alert-dismissable
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+      %h4= "#{pluralize(@tag.errors.count, "error")} prohibited this tag from being saved:"
+
+      %ul
+        - @tag.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :tagger, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :tagger, :class => 'form-control'
+  .form-group
+    = f.label :tagee, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :tagee, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

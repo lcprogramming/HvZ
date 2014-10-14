@@ -1,0 +1,14 @@
+.page-header
+  = link_to tags_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_tag_path(@tag), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show tag
+
+%dl.dl-horizontal
+  %dt Tagger:
+  %dd= @tag.tagger
+  %dt Tagee:
+  %dd= @tag.tagee

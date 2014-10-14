@@ -1,0 +1,29 @@
+= form_for @player, :html => { :class => "form-horizontal" } do |f|
+  -if @player.errors.any?
+    .alert.alert-danger.alert-dismissable
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+      %h4= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
+
+      %ul
+        - @player.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :first_name, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :first_name, :class => 'form-control'
+  .form-group
+    = f.label :last_name, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :last_name, :class => 'form-control'
+  .form-group
+    = f.label :email, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :email, :class => 'form-control'
+  .form-group
+    = f.label :status, :class => 'col-sm-2 control-label'
+    .col-sm-10
+      = f.number_field :status, :class => 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => 'btn btn-primary'

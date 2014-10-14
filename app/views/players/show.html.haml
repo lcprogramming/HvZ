@@ -1,0 +1,18 @@
+.page-header
+  = link_to players_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_player_path(@player), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show player
+
+%dl.dl-horizontal
+  %dt First name:
+  %dd= @player.first_name
+  %dt Last name:
+  %dd= @player.last_name
+  %dt Email:
+  %dd= @player.email
+  %dt Status:
+  %dd= @player.status

@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_tag_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Tag
+  %h1 Listing tags
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Tagger
+        %th Tagee
+        %th
+        %th
+        %th
+
+    %tbody
+      - @tags.each do |tag|
+        %tr
+          %td= tag.tagger
+          %td= tag.tagee
+          %td= link_to 'Show', tag
+          %td= link_to 'Edit', edit_tag_path(tag)
+          %td= link_to 'Destroy', tag, :data => { confirm: 'Are you sure?' }, :method => :delete
