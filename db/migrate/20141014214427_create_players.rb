@@ -4,7 +4,7 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :email
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps
     end

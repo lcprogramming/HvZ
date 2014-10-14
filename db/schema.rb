@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20141014214752) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.integer  "status"
+    t.integer  "status",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
